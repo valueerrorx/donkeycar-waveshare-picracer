@@ -41,9 +41,13 @@ SHOW_PILOT_IMAGE = False  # show the image used to do the inference when in auto
 # For IMAGE_LIST camera
 # PATH_MASK = "~/mycar/data/tub_1_20-03-12/*.jpg"
 
+
+
 #9865, over rides only if needed, ie. TX2..
-PCA9685_I2C_ADDR = 0x40     #I2C address, use i2cdetect to validate this number
+PCA9685_I2C_ADDR = 0x40     #steering I2C address, use i2cdetect to validate this number
+PCA9685_I2C_ADDR1 = 0x60    #throttle I2C address, use i2cdetect to validate this number
 PCA9685_I2C_BUSNUM = None   #None will auto detect, which is fine on the pi. But other platforms should specify the bus num.
+
 
 #SSD1306_128_32
 USE_SSD1306_128_32 = False    # Enable the SSD_1306 OLED Display
@@ -71,7 +75,7 @@ SSD1306_RESOLUTION = 1 # 1 = 128x32; 2 = 128x64
 # (deprecated) "PIGPIO_PWM" uses Raspberrys internal PWM
 # (deprecated) "I2C_SERVO" uses PCA9685 servo controller to control a steering servo and an ESC, as in a standard RC car
 #
-DRIVE_TRAIN_TYPE = "PWM_STEERING_THROTTLE"
+DRIVE_TRAIN_TYPE = "I2C_SERVO"
 
 #
 # PWM_STEERING_THROTTLE
@@ -97,13 +101,24 @@ PWM_STEERING_THROTTLE = {
 #
 # I2C_SERVO (deprecated in favor of PWM_STEERING_THROTTLE)
 #
-STEERING_CHANNEL = 1            #(deprecated) channel on the 9685 pwm board 0-15
-STEERING_LEFT_PWM = 460         #pwm value for full left steering
-STEERING_RIGHT_PWM = 290        #pwm value for full right steering
-THROTTLE_CHANNEL = 0            #(deprecated) channel on the 9685 pwm board 0-15
-THROTTLE_FORWARD_PWM = 500      #pwm value for max forward throttle
-THROTTLE_STOPPED_PWM = 370      #pwm value for no movement
-THROTTLE_REVERSE_PWM = 220      #pwm value for max reverse throttle
+
+
+#STEERING
+STEERING_CHANNEL = 0            #channel on the 9685 pwm board 0-15
+STEERING_LEFT_PWM = 230         #pwm value for full left steering
+STEERING_RIGHT_PWM = 440        #pwm value for full right steering
+
+#THROTTLE
+THROTTLE_CHANNEL = 0            #channel on the 9685 pwm board 0-15
+THROTTLE_FORWARD_PWM = 4095     #pwm value for max forward throttle
+THROTTLE_STOPPED_PWM = 0        #pwm value for no movement
+THROTTLE_REVERSE_PWM = -4095    #pwm value for max reverse throttle
+
+
+
+
+
+
 
 #
 # PIGPIO_PWM (deprecated in favor of PWM_STEERING_THROTTLE)

@@ -980,14 +980,16 @@ def add_drivetrain(V, cfg):
                                             left_pulse=cfg.STEERING_LEFT_PWM,
                                             right_pulse=cfg.STEERING_RIGHT_PWM)
 
-            throttle_controller = PCA9685(cfg.THROTTLE_CHANNEL, cfg.PCA9685_I2C_ADDR, busnum=cfg.PCA9685_I2C_BUSNUM)
+
+            throttle_controller = PCA9685(cfg.THROTTLE_CHANNEL, cfg.PCA9685_I2C_ADDR1, frequency=1600, busnum=cfg.PCA9685_I2C_BUSNUM)
             throttle = PWMThrottle(controller=throttle_controller,
                                             max_pulse=cfg.THROTTLE_FORWARD_PWM,
                                             zero_pulse=cfg.THROTTLE_STOPPED_PWM,
                                             min_pulse=cfg.THROTTLE_REVERSE_PWM)
 
+
             V.add(steering, inputs=['steering'], threaded=True)
-            V.add(throttle, inputs=['throttle'], threaded=True)
+            V.add(throttle, inputs=['throttle'])
 
         elif cfg.DRIVE_TRAIN_TYPE == "DC_STEER_THROTTLE":
             dt = cfg.DC_STEER_THROTTLE
