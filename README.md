@@ -19,12 +19,16 @@ Donkeycar is minimalist and modular self driving library for Python. It is
 developed for hobbyists and students with a focus on allowing fast experimentation and easy
 community contributions.
 
+This is a fork of the original repository to re-activate I2C_SERVO steering mode and make it work with this special bord.
+
 #### Quick Links
 * [Donkeycar Updates & Examples](http://donkeycar.com)
 * [Build instructions and Software documentation](http://docs.donkeycar.com)
 * [Discord / Chat](https://discord.gg/PN6kFeA)
 
-![donkeycar](https://github.com/autorope/donkeydocs/blob/master/docs/assets/build_hardware/donkey2.png)
+* [Waveshare Car](https://www.waveshare.com/product/raspberry-pi/robots/mobile-robots/piracer-ai-kit.htm)
+
+![donkeycar](piracer-ai-kit-3.jpg)
 
 #### Use Donkey if you want to:
 * Make an RC car drive its self.
