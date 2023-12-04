@@ -105,8 +105,8 @@ PWM_STEERING_THROTTLE = {
 
 #STEERING
 STEERING_CHANNEL = 0            #channel on the 9685 pwm board 0-15
-STEERING_LEFT_PWM = 230         #pwm value for full left steering
-STEERING_RIGHT_PWM = 440        #pwm value for full right steering
+STEERING_LEFT_PWM = 140         #pwm value for full left steering
+STEERING_RIGHT_PWM = 460        #pwm value for full right steering
 
 #THROTTLE
 THROTTLE_CHANNEL = 0            #channel on the 9685 pwm board 0-15
@@ -235,9 +235,6 @@ SERVO_HBRIDGE_3PIN = {
 #
 HBRIDGE_PIN_FWD = 18       # provides forward duty cycle to motor
 HBRIDGE_PIN_BWD = 16       # provides reverse duty cycle to motor
-STEERING_CHANNEL = 0       # PCA 9685 channel for steering control
-STEERING_LEFT_PWM = 460    # pwm value for full left steering (use `donkey calibrate` to measure value for your car)
-STEERING_RIGHT_PWM = 290   # pwm value for full right steering (use `donkey calibrate` to measure value for your car)
 
 #VESC controller, primarily need to change VESC_SERIAL_PORT  and VESC_MAX_SPEED_PERCENT
 VESC_MAX_SPEED_PERCENT =.2  # Max speed as a percent of the actual speed
